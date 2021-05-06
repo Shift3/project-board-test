@@ -1,0 +1,20 @@
+{
+  "type": "",
+  "host": "",
+  "port": 5432,
+  "username": "",
+  "password": "",
+  "database": "",
+  "synchronize": false,
+  "logging": true,
+  "entities": [
+      "src/database/models/**/*.entity.ts"
+   ],
+   "migrations": [
+      "src/database/migrations/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/database/models",
+      "migrationsDir": "src/database/migrations"
+   }
+}

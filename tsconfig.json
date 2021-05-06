@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "paths": {
+      "@common/*": ["src/common/*"],
+      "@consts/*": ["src/common/consts/*"],
+      "@database/*": ["src/database/*"],
+      "@decorators": ["src/common/decorators/index"],
+      "@environment": ["src/environment"],
+      "@guards": ["src/common/guards/index"],
+      "@metadata": ["src/meta-data"],
+      "@mockedclasses": ["src/common/utilities/mocked-classes/index"],
+      "@models": ["src/database/models/index"],
+      "@modules/*": ["src/modules/*"],
+      "@seeds/*": ["src/database/seeds/*"],
+      "@utilities/*": ["src/common/utilities/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

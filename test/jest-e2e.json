@@ -1,0 +1,23 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "moduleNameMapper": {
+    "@common/(.*)": "<rootDir>/../src/common/$1",
+    "@consts/(.*)": "<rootDir>/../src/common/consts/$1",
+    "@database/(.*)": "<rootDir>/../src/database/$1",
+    "@decorators": "<rootDir>/../src/common/decorators/index",
+    "@environment": "<rootDir>/../src/environment",
+    "@guards": "<rootDir>/../src/common/guards/index",
+    "@metadata": "<rootDir>/../src/meta-data",
+    "@mockedclasses": "<rootDir>/../src/common/mocked-classes/index",
+    "@models": "<rootDir>/../src/database/models/index",
+    "@modules/(.*)": "<rootDir>/../src/modules/$1",
+    "@seeds": "<rootDir>/../src/database/seeds/index",
+    "@utilities/(.*)": "<rootDir>/../src/common/utilities/$1"
+  },
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  }
+}

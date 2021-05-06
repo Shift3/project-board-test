@@ -1,0 +1,37 @@
+version: '2.3'
+
+services:
+  postgres:
+    image: postgres:12
+    networks:
+      - server_network
+    ports:
+      - ${DB_EXPOSED_PORT}:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    networks:
+        - server_network
+    command: npm run start:dev
+    env_file: ./.env
+    depends_on:
+      - postgres
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    volumes:
+      - .:/opt/node/app:delegated
+      - ./package.json:/opt/node/package.json
+      - ./package-lock.json:/opt/node/package-lock.json
+      - notused:/opt/node/app/node_modules
+volumes:
+  postgres_data:
+  notused:
+networks:
+  server_network:
